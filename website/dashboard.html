@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/mystyles.css">
+        <script src="https://kit.fontawesome.com/1ce060b73a.js" crossorigin="anonymous"></script>
+        <!--firebase-->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+        <!--plotly-->
+        <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+    </head>
+    <body>
+        <!--Nav bar code-->
+
+        <div id='modals'></div>
+        
+        <!--body-->
+        <section class="section">
+            <p id="dash-title" class="title has-text-centered">Dashboard</p>
+            <!--side menu trigger on touch devices-->
+            <div class="box is-hidden-desktop has-text-centered" id="touch-side-nav-trigger">
+              <span>Menu</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <div class="columns is-centered">
+                <!--Side Menu-->
+                <div class="column is-narrow is-hidden-touch" id="side-nav-column">
+                    <aside class="menu">
+                        <p class="menu-label">
+                          General
+                        </p>
+                        <ul class="menu-list">
+                          <li><a id='menu-dash' class="menu-item is-active">Dashboard</a></li>
+                          <li><a id='menu-log' class="menu-item">Log</a></li>
+                          <li><a id='menu-vis' class="menu-item">Visualise</a></li>
+                          <li><a id='menu-share' class="menu-item">Share</a></li>
+                        </ul>
+                        <hr>
+                        <br>
+                        <p class="menu-label">Settings</p>
+                        <ul class="menu-list">
+                          <li><a id='menu-settings-user' class="menu-item">User</a></li>
+                        </ul>
+                      </aside>
+                </div>
+                <!--Centre logging section-->
+                <div id="main-content" class="column">
+                  <div class="columns">
+                    <div class="column is-2 is-offset-1">
+                      <div class="box has-text-centered">
+                          <p>
+                            <span id='current-streak-score' class="has-text-weight-bold"></span>
+                            <span id='streak-text'>Loading.. Streak</span>
+                          </p>
+                      </div>
+                      <div class="box">
+                        <p>Severity Rating</p>
+                        <input type="range" min="0" max="8" value="4" class="slider" id="sevRange" style="width: 100%">
+                        <input class="input is-danger" type="text" id='sev-rating'>
+                      </div>
+                      <div class="box">
+                        <p>Fluency Rating</p>
+                        <input type="range" min="0" max="8" value="4" class="slider" id="fluRange" style="width: 100%">
+                        <input class="input is-danger" type="text" id='flu-rating'>
+                      </div>      
+                      <button class="button is-loading is-fullwidth is-primary is-outlined" id="log-button">Send</button>
+                      <!--USE BOKEHJS INSTEAD OF PYTHON-->
+                    </div>
+                    <div class="column is-8" id='dash-vis-col'>
+                      <div id="notif-place"></div>
+                      <div id='dash-main-vis' style="width:100%;height:500px;">
+                        <button class="button is-loading is-ghost is-large" id='dash-vis-load'></button>
+                      </div>
+                    </div>
+                      <!--<div class="bk-root" id="7beff13d-f6e7-4e7a-b5d0-4d585bc5c63f" data-root-id="1002"></div>-->
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        
+        
+
+        <!--Footer-->
+        <div id="footer"></div>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script src="/js/page_elements.js" type="module"></script>
+        <script src="/js/dashboard.js" type="module"></script>
+        <!--<script src="" async defer></script>-->
+    </body>
+</html>

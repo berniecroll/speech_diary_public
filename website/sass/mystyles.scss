@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+$navbar-height: 6rem;
+$navbar-item-img-max-height: 5rem;
+$navbar-background-color: #fed2b7;
+$navbar-tab-hover-border-bottom-color: transparent;
+$navbar-dropdown-arrow: #fd3342;
+$navbar-item-hover-color: black;
+
+
+$hero-body-padding-large: 16rem 6rem;
+
+$menu-label-font-size: 0.75em;
+
+@import "../mybulma/bulma/bulma.sass";

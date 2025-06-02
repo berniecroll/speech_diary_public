@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "public": "website",
+    "ignore": [
+      "website/mybulma/.*",
+      "website/sass",
+      "scripts",
+      ".github",
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
